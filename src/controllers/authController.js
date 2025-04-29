@@ -25,7 +25,7 @@ async getAllUsers(req, res) {
             return res.status(400).json({ error: "Os campos nome, email e senha são obrigatórios" });
     } 
     // Verificar se o usuario já existe
-        const user = await UserModel.findByEmail(email);
+        const users = await UserModel.findByEmail(email);
         if (userExists) {
             return res.status(400).json({ error: "Este email já esta em uso!" });
         }
